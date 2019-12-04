@@ -5,6 +5,26 @@ SHODAN_API_KEY = 'gNvShBAZ2FKUvHJlt2cmjCXnfDgVybV7'
 
 api = shodan.Shodan(SHODAN_API_KEY)
 
+class colors:
+    GREEN = '\033[92m'
+    STOP = '\033[0m'
+    RED='\033[31m'
+
+print colors.RED +  " _____  _             _____                    "
+print "/  ___|| |           /  ___|                   "
+print "\ `--. | |__    ___  \ `--.   ___  __ _  _ __  "
+print "`--. \ | '_ \  / _ \  `--. \ / __|/ _` || '_ \ "
+print "/\__/ /| | | || (_) |/\__/ /| (__| (_| || | | |"
+print "\____/ |_| |_| \___/ \____/  \___|\__,_||_| |_|" + colors.STOP
+                                               
+                                               
+
+
+class colors:
+    GREEN = '\033[92m'
+    STOP = '\033[0m'
+    RED='\033[31m'
+
 def menu():
 	print ("1. Host scan")
 	print ("2. Search for your query")
@@ -25,7 +45,19 @@ def menu():
 def host_func():
 	h_name = str(raw_input("Enter the host name :"))
 	info = api.host(h_name , history=True)
-	print (info)
+	print "-"*50
+	print colors.GREEN + "IP: %s"%info["ip_str"] + colors.STOP
+	print "Hostnames:\n"
+	for i in info["hostnames"]:
+			print ("  [+] %s\n"%str(i))
+	print "Organization: %s"%info.get("org", "n/a")
+	print "Operating System: %s"%info.get("os", "n/a")
+	print "Latitude: %s"%info["latitude"]
+	print "Longitude: %s"%info["longitude"]
+	print "City: %s"%info["city"]
+	print "-"*50
+
+		
 
 def search_func():
 	query = str(raw_input("query > "))

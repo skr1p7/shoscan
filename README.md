@@ -22,6 +22,8 @@ sudo apt-get install python
 ```bash
 python shoscan.py
 
+Enter you Shodan API key > **Add you Shodan API key here**
+
 1. Host scan
 2. Search for your query
 3. My IP

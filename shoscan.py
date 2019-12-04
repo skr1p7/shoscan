@@ -1,14 +1,21 @@
 import shodan
 import sys
 import os
-SHODAN_API_KEY = 'gNvShBAZ2FKUvHJlt2cmjCXnfDgVybV7'
-
-api = shodan.Shodan(SHODAN_API_KEY)
 
 class colors:
     GREEN = '\033[92m'
     STOP = '\033[0m'
     RED='\033[31m'
+
+priv_key = str(raw_input("Enter you Shodan API key > "))
+if not priv_key:
+	print colors.RED + ("You have not entered you API Key")
+	print ("Exiting the code...") + colors.STOP
+	sys.exit()
+else:
+	pass
+
+api = shodan.Shodan(priv_key)
 
 print colors.RED +  " _____  _             _____                    "
 print "/  ___|| |           /  ___|                   "

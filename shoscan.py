@@ -25,13 +25,6 @@ print "/\__/ /| | | || (_) |/\__/ /| (__| (_| || | | |"
 print "\____/ |_| |_| \___/ \____/  \___|\__,_||_| |_|" + colors.STOP
                                                
                                                
-
-
-class colors:
-    GREEN = '\033[92m'
-    STOP = '\033[0m'
-    RED='\033[31m'
-
 def menu():
 	print ("1. Host scan")
 	print ("2. Search for your query")
